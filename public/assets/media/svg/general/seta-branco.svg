@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17.999" height="18" viewBox="0 0 17.999 18">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-1 {
+        opacity: 0;
+      }
+    </style>
+  </defs>
+  <g id="seta-branco" transform="translate(17.999) rotate(90)">
+    <rect id="fundo" class="cls-1" width="17.999" height="17.999" transform="translate(0.001 0)"/>
+    <path id="seta-baixo" class="cls-2" d="M.412,8.138,8.011.394A1.447,1.447,0,0,1,9.995.4L17.588,8.14a1.453,1.453,0,0,1,0,2.027,1.387,1.387,0,0,1-1.987,0L9,3.443,2.4,10.169a1.389,1.389,0,0,1-1.985,0l-.006-.005a1.452,1.452,0,0,1,0-2.029ZM.695,9.88Z" transform="translate(0 3.706)"/>
+  </g>
+</svg>

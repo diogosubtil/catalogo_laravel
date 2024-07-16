@@ -1,0 +1,89 @@
+.cw-autocomplete-container {
+    z-index: 9999;
+}
+
+.autocomplete-suggestions { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; border: 1px solid #999; background: #FFF; cursor: default; overflow: auto; -webkit-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); -moz-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); }
+.autocomplete-suggestion { padding: 2px 5px; }
+.autocomplete-no-suggestion { padding: 2px 5px;}
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: bold; color: #000; }
+.autocomplete-group { padding: 2px 5px; font-weight: bold; font-size: 16px; color: #000; display: block; border-bottom: 1px solid #000; }
+
+.cw-container-select-lista {
+    height: 100px;
+    overflow: auto;
+    background-color: #FFF;
+    border: 1px solid #999;
+    cursor: default;
+    -webkit-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+    -moz-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+    box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+}
+
+.cw-container-select-lista .cw-item-select-lista {
+    padding: 2px 5px;
+    border-bottom: 1px solid #000;
+}
+
+.cw-container-select-lista .cw-item-select-lista.ativo {
+    background: #F0F0F0;
+}
+
+.cw-autocomplete-container strong {
+    pointer-events: none;
+}
+
+.cw-close-icon {
+    display: none;
+}
+
+@media (max-width: 500px), (max-height: 400px) {
+    .cw-autocomplete-container {
+        position: fixed !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        transform: initial !important;
+        height: 100% !important;
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        background: #FFF;
+    }
+
+    .cw-close-icon {
+        display: initial;
+        width: 30px;
+        background: transparent;
+        border: 0;
+        font-size: 20px;
+    }
+
+    .cw-close-icon::before {
+        content: 'x';
+        color: #000;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+    }
+
+    .cw-autocomplete-container .cw-container-sugestoes {
+        flex: 1;
+    }
+
+    .cw-autocomplete-container .cw-autocomplete-container-input-btn-close {
+        width: 100% !important;
+        display: flex;
+    }
+
+    .cw-autocomplete-container .cw-autocomplete-container-input-btn-close > input {
+        flex: 1;
+        width: initial !important;
+    }
+
+    .autocomplete-suggestions {
+        height: 100% !important;
+        width: 100% !important;
+        max-height: 100% !important;
+    }
+}
