@@ -21,8 +21,8 @@ class Produto extends Model
         'codigo_interno',
         'codigo_externo',
         'marca',
-        'veiculo',
-        'linha_do_produto',
+        'grupo',
+        'sub_grupo',
         'visivel',
         'image_url',
     ];

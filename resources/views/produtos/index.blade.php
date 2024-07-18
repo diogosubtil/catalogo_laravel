@@ -138,9 +138,9 @@
                                         <th class="min-w-125px">Nome</th>
                                         <th class="min-w-125px">Cod. Interno</th>
                                         <th class="min-w-125px">Cod. Externo</th>
-                                        <th class="min-w-125px">Linha do produto</th>
                                         <th class="min-w-125px">Marca</th>
-                                        <th class="min-w-125px">Veiculo</th>
+                                        <th class="min-w-125px">Produto</th>
+                                        <th class="min-w-125px">Linha do Produto</th>
                                         <th class="min-w-125px">Data de Cadastro</th>
                                         <th class="text-center min-w-50px">Ações</th>
                                     </tr>
@@ -157,9 +157,9 @@
                                             </td>
                                             <td>{{ $produto->codigo_interno }}</td>
                                             <td>{{ $produto->codigo_externo }}</td>
-                                            <td>{{ $produto->linha_do_produto }}</td>
                                             <td>{{ $produto->marca }}</td>
-                                            <td>{{ $produto->veiculo }}</td>
+                                            <td>{{ $produto->grupo }}</td>
+                                            <td>{{ $produto->sub_grupo }}</td>
                                             <td>{{ date('d/m/Y H:i', strtotime($produto->created_at)) }}</td>
                                             <td class="text-center">
                                                 <a href="#"

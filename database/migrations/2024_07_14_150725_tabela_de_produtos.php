@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('codigo_interno', 255)->nullable();
             $table->string('codigo_externo', 255)->nullable();
             $table->string('marca', 255)->nullable();
-            $table->string('veiculo', 255)->nullable();
-            $table->string('linha_do_produto', 255)->nullable();
+            $table->string('grupo', 255)->nullable();
+            $table->string('sub_grupo', 255)->nullable();
             $table->string('visivel', 255)->nullable();
             $table->string('image_url', 255)->nullable();
             $table->timestamps();

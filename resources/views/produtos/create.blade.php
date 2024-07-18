@@ -70,16 +70,6 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-xl-4 col-md-6 col-12">
-                                            <label for="linha_do_produto" class="form-label fs-6 fw-bold mb-3 required">Linha do produto</label>
-                                            <select name="linha_do_produto" class="form-select form-select-solid fw-bold" data-kt-select2="true"
-                                                    data-placeholder="Selecione" data-allow-clear="true"
-                                                    data-kt-user-table-filter="role" data-hide-search="true" required>
-                                                <option value="">Selecione</option>
-                                                <option value="111">111</option>
-                                                <option value="1111">1111</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xl-4 col-md-6 col-12">
                                             <label for="marca" class="form-label fs-6 fw-bold mb-3 required">Marca</label>
                                             <select name="marca" class="form-select form-select-solid fw-bold" data-kt-select2="true"
                                                     data-placeholder="Selecione" data-allow-clear="true"
@@ -90,13 +80,23 @@
                                             </select>
                                         </div>
                                         <div class="col-xl-4 col-md-6 col-12">
-                                            <label for="veiculo" class="form-label fs-6 fw-bold mb-3 required">Veiculo</label>
-                                            <select name="veiculo" class="form-select form-select-solid fw-bold" data-kt-select2="true"
+                                            <label for="grupo" class="form-label fs-6 fw-bold mb-3 required">Produto</label>
+                                            <select name="grupo" class="form-select form-select-solid fw-bold" data-kt-select2="true"
                                                     data-placeholder="Selecione" data-allow-clear="true"
                                                     data-kt-user-table-filter="role" data-hide-search="true" required>
                                                 <option value="">Selecione</option>
                                                 <option value="333">333</option>
                                                 <option value="3333">3333</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 col-12">
+                                            <label for="sub_grupo" class="form-label fs-6 fw-bold mb-3 required">Linha do produto</label>
+                                            <select name="sub_grupo" class="form-select form-select-solid fw-bold" data-kt-select2="true"
+                                                    data-placeholder="Selecione" data-allow-clear="true"
+                                                    data-kt-user-table-filter="role" data-hide-search="true" required>
+                                                <option value="">Selecione</option>
+                                                <option value="111">111</option>
+                                                <option value="1111">1111</option>
                                             </select>
                                         </div>
                                     </div>

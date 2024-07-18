@@ -92,8 +92,8 @@
                                         </table>
                                     </div>
                                     <div class="btDetalhes">
-                                        <button id="botao_detalhes">Detalhes</button>
-                                        <button style="margin-left: 5px" id="botao_comprar">Comprar</button>
+                                        <button onclick="pageDetalhes({{ $produto->id }})">Detalhes</button>
+                                        <button style="margin-left: 5px" onclick="pageComprar()">Comprar</button>
                                     </div>
                                 </div>
                             </div>
@@ -123,16 +123,14 @@
 
     @slot('scripts')
         <script>
-            let btn_detalhes = document.querySelector('#botao_detalhes')
-            let btn_comprar = document.querySelector('#botao_comprar')
 
-            btn_detalhes.addEventListener('click', function () {
-                window.location.href = "{{ route('index.detalhes', $produto->id) }}"
-            })
+            function pageDetalhes($id) {
+                window.location.href = "{{ route('index.detalhes', 'id_produto') }}".replace('id_produto', $id)
+            }
 
-            btn_comprar.addEventListener('click', function () {
+            function pageComprar() {
                 window.location.href = "{{ route('index.lojas') }}"
-            })
+            }
         </script>
     @endslot
 </x-index>

@@ -1,16 +1,6 @@
 <x-index>
     @slot('stylesheet')
-        <style>
-            .title_contatos {
-                font-size: 35px;
-            }
 
-            @media (max-width: 725px) {
-                .title_contatos {
-                    font-size: 25px;
-                }
-            }
-        </style>
     @endslot
 
     @slot('slot')
@@ -25,10 +15,6 @@
                 </div>
                 <div class="informacoesProdutoHome informacoesProdutoHome-detalhes">
                     <div class="col-12 row">
-                        <div class="col-12 text-center">
-                            <span class="title_contatos" style="color: #8B0000"> NOSSAS LOJAS </span><br>
-                            <span class="" style="color: #8B0000">Venha fazer uma visita e tomar um cafézinho. Estamos prontos para te receber. </span>
-                        </div>
                         <div class="col-12">
                             <hr>
                         </div>
