@@ -250,7 +250,7 @@
                                             <span class="menu-bullet">
                                                 <span class="bullet bullet-dot"></span>
                                             </span>
-                                            <span class="menu-title">SubGrupos</span>
+                                            <span class="menu-title">Sub Grupos</span>
                                         </a>
                                     </div>
                                 </div>
