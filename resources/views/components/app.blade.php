@@ -483,10 +483,8 @@
                                                 </div>
                                                 <div class="d-flex flex-column">
                                                     <div class="fw-bold d-flex align-items-center fs-5">
-                                                        Diogo
+                                                        {{ Auth::user()->name }}
                                                     </div>
-                                                    <a href="#"
-                                                        class="fw-semibold text-muted text-hover-primary fs-7">Administrador</a>
                                                 </div>
                                             </div>
                                         </div>
