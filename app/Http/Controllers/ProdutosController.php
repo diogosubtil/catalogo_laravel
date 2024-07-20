@@ -29,9 +29,10 @@ class ProdutosController extends Controller
 
     public function create()
     {
-        $data['marcas'] = Marca::query();
-        $data['grupos'] = Grupo::query();
-        $data['sub_grupos'] = SubGrupo::query();
+        $data['marcas'] = Marca::all();
+        $data['grupos'] = Grupo::all();
+        $data['sub_grupos'] = SubGrupo::all();
+
         return view('produtos.create')
             ->with('marcas',$data['marcas'])
             ->with('grupos',$data['grupos'])
@@ -67,9 +68,9 @@ class ProdutosController extends Controller
 
     public function edit(Produto $produto)
     {
-        $data['marcas'] = Marca::query();
-        $data['grupos'] = Grupo::query();
-        $data['sub_grupos'] = SubGrupo::query();
+        $data['marcas'] = Marca::all();
+        $data['grupos'] = Grupo::all();
+        $data['sub_grupos'] = SubGrupo::all();
 
         return view('produtos.edit')
             ->with(['produto' => $produto])
