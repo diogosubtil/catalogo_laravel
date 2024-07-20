@@ -21,8 +21,8 @@ class IndexController extends Controller
             $data['produtos']->where('grupo', '=', $request->grupo);
         }
 
-        if ($request->has('tipo_produto')) {
-            $data['produtos']->where('sub_grupo', '=', $request->tipo_produto);
+        if ($request->has('sub_grupo')) {
+            $data['produtos']->where('sub_grupo', '=', $request->sub_grupo);
         }
 
         if ($request->has('geral')) {

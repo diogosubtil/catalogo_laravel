@@ -74,9 +74,9 @@
                                             <select name="marca" class="form-select form-select-solid fw-bold" data-kt-select2="true"
                                                     data-placeholder="Selecione" data-allow-clear="true"
                                                     data-kt-user-table-filter="role" data-hide-search="true" required>
-                                                <option value="">Selecione</option>
-                                                <option value="222">222</option>
-                                                <option value="2222">2222</option>
+                                                @foreach($marcas as $marca)
+                                                    <option value="{{ $marca->nome }}">{{ $marca->nome }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <div class="col-xl-4 col-md-6 col-12">
@@ -84,9 +84,9 @@
                                             <select name="grupo" class="form-select form-select-solid fw-bold" data-kt-select2="true"
                                                     data-placeholder="Selecione" data-allow-clear="true"
                                                     data-kt-user-table-filter="role" data-hide-search="true" required>
-                                                <option value="">Selecione</option>
-                                                <option value="333">333</option>
-                                                <option value="3333">3333</option>
+                                                @foreach($grupos as $grupo)
+                                                    <option value="{{ $grupo->nome }}">{{ $grupo->nome }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <div class="col-xl-4 col-md-6 col-12">
@@ -94,9 +94,9 @@
                                             <select name="sub_grupo" class="form-select form-select-solid fw-bold" data-kt-select2="true"
                                                     data-placeholder="Selecione" data-allow-clear="true"
                                                     data-kt-user-table-filter="role" data-hide-search="true" required>
-                                                <option value="">Selecione</option>
-                                                <option value="111">111</option>
-                                                <option value="1111">1111</option>
+                                                @foreach($sub_grupos as $sub_grupo)
+                                                    <option value="{{ $sub_grupo->nome }}">{{ $sub_grupo->nome }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>

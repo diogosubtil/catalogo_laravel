@@ -1,4 +1,4 @@
-@php use App\Models\Grupo;use App\Models\Marca; @endphp
+@php use App\Models\Grupo;use App\Models\Marca;use App\Models\SubGrupo; @endphp
     <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -79,7 +79,7 @@
                                     <select type="text" class="campoGeral" id="sub_grupo" name="sub_grupo">
                                         <option disabled value="" selected>Selecione a linha do produto</option>
                                         @php
-                                            $data['sub_grupo'] = Grupo::all();
+                                            $data['sub_grupo'] = SubGrupo::all();
                                         @endphp
                                         @foreach($data['sub_grupo'] as $sub_grupo)
                                             <option

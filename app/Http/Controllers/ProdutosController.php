@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Grupo;
+use App\Models\Marca;
 use App\Models\Produto;
+use App\Models\SubGrupo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -26,7 +29,13 @@ class ProdutosController extends Controller
 
     public function create()
     {
-        return view('produtos.create');
+        $data['marcas'] = Marca::query();
+        $data['grupos'] = Grupo::query();
+        $data['sub_grupos'] = SubGrupo::query();
+        return view('produtos.create')
+            ->with('marcas',$data['marcas'])
+            ->with('grupos',$data['grupos'])
+            ->with('sub_grupos',$data['sub_grupos']);
     }
 
     public function store(Request $request)
@@ -58,7 +67,15 @@ class ProdutosController extends Controller
 
     public function edit(Produto $produto)
     {
-        return view('produtos.edit')->with(['produto' => $produto]);
+        $data['marcas'] = Marca::query();
+        $data['grupos'] = Grupo::query();
+        $data['sub_grupos'] = SubGrupo::query();
+
+        return view('produtos.edit')
+            ->with(['produto' => $produto])
+            ->with(['marcas' => $data['marcas']])
+            ->with(['grupos' => $data['grupos']])
+            ->with(['sub_grupos' => $data['sub_grupos']]);
     }
 
     public function update(Request $request, Produto $produto)
