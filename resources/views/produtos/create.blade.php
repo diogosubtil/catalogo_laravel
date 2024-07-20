@@ -74,6 +74,7 @@
                                             <select name="marca" class="form-select form-select-solid fw-bold" data-kt-select2="true"
                                                     data-placeholder="Selecione" data-allow-clear="true"
                                                     data-kt-user-table-filter="role" data-hide-search="true" required>
+                                                <option value="">Selecione</option>
                                                 @foreach($marcas as $marca)
                                                     <option value="{{ $marca->nome }}">{{ $marca->nome }}</option>
                                                 @endforeach
@@ -84,6 +85,7 @@
                                             <select name="grupo" class="form-select form-select-solid fw-bold" data-kt-select2="true"
                                                     data-placeholder="Selecione" data-allow-clear="true"
                                                     data-kt-user-table-filter="role" data-hide-search="true" required>
+                                                <option value="">Selecione</option>
                                                 @foreach($grupos as $grupo)
                                                     <option value="{{ $grupo->nome }}">{{ $grupo->nome }}</option>
                                                 @endforeach
@@ -94,6 +96,7 @@
                                             <select name="sub_grupo" class="form-select form-select-solid fw-bold" data-kt-select2="true"
                                                     data-placeholder="Selecione" data-allow-clear="true"
                                                     data-kt-user-table-filter="role" data-hide-search="true" required>
+                                                <option value="">Selecione</option>
                                                 @foreach($sub_grupos as $sub_grupo)
                                                     <option value="{{ $sub_grupo->nome }}">{{ $sub_grupo->nome }}</option>
                                                 @endforeach
