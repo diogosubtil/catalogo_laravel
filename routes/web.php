@@ -1,9 +1,12 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GruposController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\MarcasController;
 use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SubGruposController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -20,8 +23,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/csv', [ProdutosController::class, 'importCsv'])->name('csv');
 
     Route::resource('/produtos', ProdutosController::class);
-
     Route::resource('/users', UsersController::class);
+    Route::resource('/marcas', MarcasController::class);
+    Route::resource('/grupos', GruposController::class);
+    Route::resource('/sub_grupos', SubGruposController::class);
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

@@ -1,4 +1,5 @@
-<!doctype html>
+@php use App\Models\Grupo;use App\Models\Marca; @endphp
+    <!doctype html>
 <html lang="pt-BR">
 <head>
     <meta charset="utf-8">
@@ -30,7 +31,7 @@
             <span id="cw-botao-tab-0-0">
             </span>
             <div class="row">
-                <div class="col-lg-5 col-md-5 col-5 mt-4 logoEquipecas" >
+                <div class="col-lg-5 col-md-5 col-5 mt-4 logoEquipecas">
                     <a href="/">
                         <img src="{{ asset('/assets/images/logo.webp') }}" alt="Equipecas" style="width: 100%">
                     </a>
@@ -45,29 +46,52 @@
                             <h1 class="tituloFiltros">Catálogo de Produtos</h1>
                             <div class="camposDeBusca">
                                 <div class="input-groupTata">
-                                    <input type="text" class="campoGeral" value="{{ !empty($_GET['geral']) ? $_GET['geral'] : '' }}" placeholder="Nome / Codigo / Descrição"
+                                    <input type="text" class="campoGeral"
+                                           value="{{ !empty($_GET['geral']) ? $_GET['geral'] : null }}"
+                                           placeholder="Nome / Codigo / Descrição"
                                            id="geral" name="geral">
                                 </div>
                                 <div class="input-groupTata">
                                     <select type="text" class="campoGeral" id="marca" name="marca">
                                         <option disabled value="" selected>Selecione a marca</option>
-                                        <option value="">teste</option>
+                                        @php
+                                            $data['marcas'] = Marca::all();
+                                        @endphp
+                                        @foreach($data['marcas'] as $marcas)
+                                            <option
+                                                {{ !empty($_GET['marca']) && $_GET['marca'] == $marcas->nome ? 'selected'  : '' }} value="{{ $marcas->nome }}">{{ $marcas->nome }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="input-groupTata">
-                                    <select type="text" class="campoGeral" id="produto" name="produto">
+                                    <select type="text" class="campoGeral" id="grupo" name="grupo">
                                         <option disabled value="" selected>Selecione o produto</option>
-                                        <option>teste</option>
+                                        @php
+                                            $data['grupo'] = Grupo::all();
+                                        @endphp
+                                        @foreach($data['grupo'] as $grupo)
+                                            <option
+                                                {{ !empty($_GET['grupo']) && $_GET['grupo'] == $grupo->nome ? 'selected'  : '' }} value="{{ $grupo->nome }}">{{ $grupo->nome }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="input-groupTata">
-                                    <select type="text" class="campoGeral" id="tipo_produto" name="tipo_produto">
-                                        <option selected>Selecione a linha do produto </option>
+                                    <select type="text" class="campoGeral" id="sub_grupo" name="sub_grupo">
+                                        <option disabled value="" selected>Selecione a linha do produto</option>
+                                        @php
+                                            $data['sub_grupo'] = Grupo::all();
+                                        @endphp
+                                        @foreach($data['sub_grupo'] as $sub_grupo)
+                                            <option
+                                                {{ !empty($_GET['sub_grupo']) && $_GET['sub_grupo'] == $sub_grupo->nome ? 'selected'  : '' }} value="{{ $sub_grupo->nome }}">{{ $sub_grupo->nome }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
                             <div class="">
-                                <button class="limpar" type="button" id="limpar-busca" onclick="limparBusca()">Limpar campos</button>
+                                <button class="limpar" type="button" id="limpar-busca" onclick="limparBusca()">Limpar
+                                    campos
+                                </button>
                                 <button class="buscar" type="submit">Buscar</button>
                             </div>
                         </form>
@@ -112,11 +136,7 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
     function limparBusca() {
-        document.querySelector('#geral').value = '';
-        document.querySelector('#marca').value = '';
-        document.querySelector('#veiculo').value = '';
-        document.querySelector('#marca_produto').value = '';
-        document.querySelector('#form-busca').submit()
+        window.location.href = '/'
     }
 </script>
 </body>

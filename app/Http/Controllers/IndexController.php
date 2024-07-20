@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Marca;
 use App\Models\Produto;
 use Illuminate\Http\Request;
 
@@ -12,25 +13,28 @@ class IndexController extends Controller
         $data['produtos'] = Produto::query();
         $data['produtos']->where('visivel', '=', "sim");
 
-        if ($request->has('geral')) {
-            $data['produtos']->where('nome', 'like', "%".$request->geral."%");
-            $data['produtos']->orWhere('codigo_interno', 'like', "%".$request->geral."%");
-            $data['produtos']->orWhere('codigo_externo', 'like', "%".$request->geral."%");
-            $data['produtos']->orWhere('descricao', 'like', "%".$request->geral."%");
+        if ($request->has('marca')) {
+            $data['produtos']->where('marca', '=', $request->marca);
         }
 
-        if ($request->has('linha_do_produto')) {
-            $data['produtos']->where('linha_do_produto', 'like', "%".$request->linha_do_produto."%");
+        if ($request->has('grupo')) {
+            $data['produtos']->where('grupo', '=', $request->grupo);
         }
-        if ($request->has('montadora')) {
-            $data['produtos']->where('montadora', 'like', "%".$request->montadora."%");
+
+        if ($request->has('tipo_produto')) {
+            $data['produtos']->where('sub_grupo', '=', $request->tipo_produto);
         }
-        if ($request->has('veiculo')) {
-            $data['produtos']->where('veiculo', 'like', "%".$request->veiculo."%");
+
+        if ($request->has('geral')) {
+            $geral = $request->geral;
+            $data['produtos']->where(function($query) use ($geral) {
+                $query->where('nome', 'like', "%$geral%")
+                    ->orWhere('codigo_interno', 'like', "%$geral%")
+                    ->orWhere('codigo_externo', 'like', "%$geral%")
+                    ->orWhere('descricao', 'like', "%$geral%");
+            });
         }
-        if ($request->has('ano')) {
-            $data['produtos']->where('ano', 'like', "%".$request->ano."%");
-        }
+
 
         $data['produtos_all'] = $data['produtos']->count();
 

@@ -221,6 +221,38 @@
                                             <span class="menu-title">Cadastrar</span>
                                         </a>
                                     </div>
+                                    <div class="menu-item">
+                                        <div class="menu-content">
+                                            <span class="menu-section fs-5 fw-bolder ps-1 py-1">Grupos</span>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="{{ route('marcas.index') }}"
+                                           class="menu-link">
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">Marcas</span>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="{{ route('grupos.index') }}"
+                                           class="menu-link">
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">Grupos</span>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="{{ route('sub_grupos.index') }}"
+                                           class="menu-link">
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">SubGrupos</span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                             <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}"

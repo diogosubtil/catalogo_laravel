@@ -94,6 +94,10 @@ class ProdutosController extends Controller
     public function destroy(Produto $produto)
     {
         $produto->delete();
+
+        //ENVIA MENSAGEM DE SUCESSO
+        session()->flash('success', 'success');
+
         return to_route('produtos.index');
     }
 
