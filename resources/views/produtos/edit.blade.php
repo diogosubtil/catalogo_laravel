@@ -82,7 +82,7 @@
                                             </select>
                                         </div>
                                         <div class="col-xl-4 col-md-6 col-12">
-                                            <label for="grupo" class="form-label fs-6 fw-bold mb-3 required">Produto</label>
+                                            <label for="grupo" class="form-label fs-6 fw-bold mb-3 required">Grupo</label>
                                             <select name="grupo" class="form-select form-select-solid fw-bold" data-kt-select2="true"
                                                     data-placeholder="Selecione" data-allow-clear="true"
                                                     data-kt-user-table-filter="role" data-hide-search="true" required>
@@ -92,7 +92,7 @@
                                             </select>
                                         </div>
                                         <div class="col-xl-4 col-md-6 col-12">
-                                            <label for="sub_grupo" class="form-label fs-6 fw-bold mb-3 required">Linha do produto</label>
+                                            <label for="sub_grupo" class="form-label fs-6 fw-bold mb-3 required">SubGrupo</label>
                                             <select name="sub_grupo" class="form-select form-select-solid fw-bold" data-kt-select2="true"
                                                     data-placeholder="Selecione" data-allow-clear="true"
                                                     data-kt-user-table-filter="role" data-hide-search="true" required>
