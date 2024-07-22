@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="input-groupTata">
                                     <select type="text" class="campoGeral" id="marca" name="marca">
-                                        <option disabled value="" selected>Selecione a marca</option>
+                                        <option disabled value="" selected>Selecione a Montadora</option>
                                         @php
                                             $data['marcas'] = Marca::all();
                                         @endphp
@@ -118,12 +118,32 @@
         </div>
     </div>
     <footer>
-        <section class="assinatura">
+        <section class="assinatura" style="background: #8B0000">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
-                        <div class="textoAssinatura">© Equipeças <span id="ideia-ano-footer"></span> - Todos os
-                            direitos reservados.
+                    <div class="col-6">
+                        <div class="textoAssinatura" style="font-size: 14px!important;">
+                            <a href="https://www.facebook.com/equipecas/" target="_blank">
+                                <img alt="Grey Facebook Ícone" fetchpriority="high"
+                                     src="https://static.wixstatic.com/media/d3470ec8ca26475da4b228f0199b5d3d.png/v1/fill/w_30,h_30,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/d3470ec8ca26475da4b228f0199b5d3d.png"
+                                     style="width: 30px; height: 30px; object-fit: cover;">
+                            </a>
+                            <a href="https://www.instagram.com/equipecas/" target="_blank">
+                                <img alt="Grey Instagram Ícone" fetchpriority="high"
+                                     src="https://static.wixstatic.com/media/d7ffe259c9e54f59837481b3dd0130eb.png/v1/fill/w_30,h_30,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/d7ffe259c9e54f59837481b3dd0130eb.png"
+                                     style="width: 30px; height: 30px; object-fit: cover;">
+                            </a>
+                            <a href="https://www.youtube.com/channel/UCAgCL7BetRdGcFEUq5AC22g" target="_blank" style="margin-right: 10px">
+                                <img alt="Cinza ícone do YouTube" fetchpriority="high"
+                                     src="https://static.wixstatic.com/media/af037f3cc11741d1ada5c7f70d1074bf.png/v1/fill/w_30,h_30,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/af037f3cc11741d1ada5c7f70d1074bf.png"
+                                     style="width: 30px; height: 30px; object-fit: cover;">
+                            </a>
+                            © Equipeças <span id="ideia-ano-footer"></span> - Todos os direitos reservados.
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div style="float: right; margin-top: 25px;font-size: 14px!important;">
+                            Desenvolvido por <a href="https://wa.me/5541998657434" target="_blank" style="color: inherit;text-decoration: none;background: none;border: none;padding: 0;margin: 0;font: inherit;text-align: inherit;">AF Robotics</a>
                         </div>
                     </div>
                 </div>

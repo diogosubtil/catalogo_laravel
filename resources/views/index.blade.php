@@ -11,6 +11,9 @@
                 background-color: #8B0000;
                 border-color: #8B0000;
             }
+            .pagina-ideia .tituloAplicacao > * {
+                padding-right: 0px!important;
+            }
         </style>
     @endslot
 
@@ -45,7 +48,7 @@
                             </div>
                         </div>
                         <div class="informacoesProdutoHome informacoesProdutoHome-resultado">
-                            <h2 class="tituloProduto" id="cw-descricao-produto" style="">{{ $produto->nome }}</h2>
+                            <h2 class="tituloProduto" id="cw-descricao-produto" style="font-size: 18px">{{ $produto->nome }}</h2>
                             <div class="infosTecnicasHome">
                                 <div>
                                     <figure class="imagemHomeProduto">
@@ -61,7 +64,7 @@
                                             <tr>
                                                 <th class="titTabAplic" scope="col">
                                                     <div>
-                                                        VEÍCULO
+                                                        ITEM
                                                     </div>
                                                 </th>
                                                 <th class="titTabAplic" scope="col">
@@ -74,18 +77,25 @@
                                             <tbody>
                                                 <tr>
                                                     <td class="tituloAplicacao" >
-                                                        Marca: {{ $produto->marca }}
+                                                        <strong>Marca:</strong> {{ $produto->marca_do_produto }}
                                                     </td>
                                                     <td class="tituloAplicacao">
-                                                        Cod. Interno {{ $produto->codigo_interno }}
+                                                        <strong>Cod. Interno:</strong> {{ $produto->codigo_interno }}
+                                                    </td>
+                                                </tr>
+                                                <tr >
+                                                    <td class="tituloAplicacao">
+                                                       <strong>Produto:</strong> {{ $produto->grupo }}
+                                                    </td>
+                                                    <td class="tituloAplicacao">
+                                                        <strong>Cod. Fabricante:</strong> {{ $produto->codigo_externo }}
                                                     </td>
                                                 </tr>
                                                 <tr class="linha-aplicacao linha-aplicacao-resultado">
                                                     <td class="tituloAplicacao">
-                                                            Modelo: {{ $produto->veiculo }}
+                                                        <strong>Linha do produto:</strong> {{ $produto->sub_grupo }}
                                                     </td>
                                                     <td class="tituloAplicacao">
-                                                        Cod. Externo {{ $produto->codigo_externo }}
                                                     </td>
                                                 </tr>
                                             </tbody>

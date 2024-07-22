@@ -137,10 +137,10 @@
                                         </th>
                                         <th class="min-w-125px">Nome</th>
                                         <th class="min-w-125px">Cod. Interno</th>
-                                        <th class="min-w-125px">Cod. Externo</th>
-                                        <th class="min-w-125px">Marca</th>
-                                        <th class="min-w-125px">Grupo</th>
-                                        <th class="min-w-125px">SubGrupo</th>
+                                        <th class="min-w-125px">Cod. Fabricante</th>
+                                        <th class="min-w-125px">Montadora</th>
+                                        <th class="min-w-125px">Produto</th>
+                                        <th class="min-w-125px">Linha do produto</th>
                                         <th class="min-w-125px">Data de Cadastro</th>
                                         <th class="text-center min-w-50px">Ações</th>
                                     </tr>

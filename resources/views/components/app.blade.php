@@ -232,7 +232,7 @@
                                             <span class="menu-bullet">
                                                 <span class="bullet bullet-dot"></span>
                                             </span>
-                                            <span class="menu-title">Marcas</span>
+                                            <span class="menu-title">Montadoras</span>
                                         </a>
                                     </div>
                                     <div class="menu-item">
@@ -241,7 +241,7 @@
                                             <span class="menu-bullet">
                                                 <span class="bullet bullet-dot"></span>
                                             </span>
-                                            <span class="menu-title">Grupos</span>
+                                            <span class="menu-title">Produto</span>
                                         </a>
                                     </div>
                                     <div class="menu-item">
@@ -250,7 +250,7 @@
                                             <span class="menu-bullet">
                                                 <span class="bullet bullet-dot"></span>
                                             </span>
-                                            <span class="menu-title">Sub Grupos</span>
+                                            <span class="menu-title">Linha do produto</span>
                                         </a>
                                     </div>
                                 </div>

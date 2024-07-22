@@ -46,19 +46,25 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-xl-4 col-md-6 col-12">
+                                        <div class="col-xl-3 col-md-6 col-12">
                                             <div class="form-group">
                                                 <label for="name" class="mb-3">Código Interno</label>
                                                 <input type="text" class="form-control" value="{{ $produto->codigo_interno }}" id="codigo_interno" name="codigo_interno" placeholder="Código interno" required>
                                             </div>
                                         </div>
-                                        <div class="col-xl-4 col-md-6 col-12">
+                                        <div class="col-xl-3 col-md-6 col-12">
                                             <div class="form-group">
-                                                <label for="name" class="mb-3">Código Externo</label>
+                                                <label for="name" class="mb-3">Código Fabricante</label>
                                                 <input type="text" class="form-control" value="{{ $produto->codigo_externo }}" id="codigo_externo" name="codigo_externo" placeholder="Código externo" required>
                                             </div>
                                         </div>
-                                        <div class="col-xl-4 col-md-6 col-12">
+                                        <div class="col-xl-3 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label for="name" class="mb-3 required">Marca do produto</label>
+                                                <input type="text" class="form-control" value="{{ $produto->marca_do_produto }}" id="marca_do_produto" name="marca_do_produto" placeholder="Marca do produto" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-md-6 col-12">
                                             <label for="visivel" class="form-label fs-6 fw-bold mb-3 required">Visivel</label>
                                             <select name="visivel" class="form-select form-select-solid fw-bold" data-kt-select2="true"
                                                     data-placeholder="Selecione" data-allow-clear="true"
@@ -72,7 +78,7 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-xl-4 col-md-6 col-12">
-                                            <label for="marca" class="form-label fs-6 fw-bold mb-3 required">Marca</label>
+                                            <label for="marca" class="form-label fs-6 fw-bold mb-3 required">Montadora</label>
                                             <select name="marca" class="form-select form-select-solid fw-bold" data-kt-select2="true"
                                                     data-placeholder="Selecione" data-allow-clear="true"
                                                     data-kt-user-table-filter="role" data-hide-search="true" required>
@@ -82,7 +88,7 @@
                                             </select>
                                         </div>
                                         <div class="col-xl-4 col-md-6 col-12">
-                                            <label for="grupo" class="form-label fs-6 fw-bold mb-3 required">Grupo</label>
+                                            <label for="grupo" class="form-label fs-6 fw-bold mb-3 required">Produto</label>
                                             <select name="grupo" class="form-select form-select-solid fw-bold" data-kt-select2="true"
                                                     data-placeholder="Selecione" data-allow-clear="true"
                                                     data-kt-user-table-filter="role" data-hide-search="true" required>
@@ -92,7 +98,7 @@
                                             </select>
                                         </div>
                                         <div class="col-xl-4 col-md-6 col-12">
-                                            <label for="sub_grupo" class="form-label fs-6 fw-bold mb-3 required">SubGrupo</label>
+                                            <label for="sub_grupo" class="form-label fs-6 fw-bold mb-3 required">Linha do produto</label>
                                             <select name="sub_grupo" class="form-select form-select-solid fw-bold" data-kt-select2="true"
                                                     data-placeholder="Selecione" data-allow-clear="true"
                                                     data-kt-user-table-filter="role" data-hide-search="true" required>

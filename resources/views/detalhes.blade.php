@@ -27,6 +27,9 @@
                 cursor: -webkit-zoom-out;
                 transition: -webkit-transform 0.4s cubic-bezier(0.4, 0, 0, 1) 0s;
             }
+            .pagina-ideia .tituloAplicacao > * {
+                padding-right: 0px!important;
+            }
         </style>
     @endslot
 
@@ -45,48 +48,67 @@
                         <div style="color: #FFFFFF">{{ $produto->codigo_interno }} / {{ $produto->codigo_externo }}</div>
                     </div>
                 </div>
-                <div class="informacoesProdutoHome informacoesProdutoHome-detalhes">
-                    <h2 class="tituloProduto" style="">{{ $produto->nome }}</h2>
+                <div class="informacoesProdutoHome informacoesProdutoHome-resultado">
+                    <h2 class="tituloProduto" id="cw-descricao-produto" style="font-size: 18px">{{ $produto->nome }}</h2>
                     <div class="infosTecnicasHome">
-                        <div id="imagemPequena">
-                            <figure class="imagemHomeProduto imagemHomeProduto-detalhes">
-                                <img  src="{{ asset($produto->image_url) }}"
-                                     alt="{{ $produto->nome }}">
+                        <div>
+                            <figure class="imagemHomeProduto">
+                                <img id="cw-arquivo-foto-produto" onerror=""
+                                     src="{{ asset($produto->image_url) }}" alt="{{ $produto->nome }}">
                             </figure>
                         </div>
-
-                        <div class="container-dados-tecnicos-e-btn">
-                            <div class="tabelaHome">
-                                <h3 class="tituloDados" id="titulo-dados-tecnicos">DADOS
-                                    TÉCNICOS</h3>
-                                <div class="infos cw-esconde-coluna cw-sem-conteudo">
-                                    <strong>Linha do produto: </strong>
-                                    <span class="cw-esconde-coluna">{{ $produto->linha_do_produto }}</span>
-                                </div>
-                                <div class="infos cw-esconde-coluna cw-sem-conteudo">
-                                    <strong>Marca: </strong>
-                                    <span class="cw-esconde-coluna">{{ $produto->marca }}</span>
-                                </div>
-                                <div class="infos cw-esconde-coluna cw-sem-conteudo">
-                                    <strong>Veiculo: </strong>
-                                    <span class="cw-esconde-coluna">{{ $produto->veiculo }}</span>
-                                </div>
-                                <div class="infos cw-esconde-coluna cw-sem-conteudo">
-                                    <strong>Cod. Interno: </strong>
-                                    <span class="cw-esconde-coluna">{{ $produto->codigo_interno }}</span>
-                                </div>
-                                <div class="infos cw-esconde-coluna cw-sem-conteudo">
-                                    <strong>Cod. Externo: </strong>
-                                    <span class="cw-esconde-coluna">{{ $produto->codigo_externo }}</span>
-                                </div>
+                        <div class="tabelaHome tabelaHome-resultado"
+                             id="cw-container-fabricante-aplicacao-produto">
+                            <div class="container-tabela-aplicacao-resultado">
+                                <table width="100%" border="0">
+                                    <thead>
+                                    <tr>
+                                        <th class="titTabAplic" scope="col">
+                                            <div>
+                                                ITEM
+                                            </div>
+                                        </th>
+                                        <th class="titTabAplic" scope="col">
+                                            <div id="cw-coluna-complementoaplicacao2" style="">
+                                                Código
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="tituloAplicacao" >
+                                            <strong>Marca:</strong> {{ $produto->marca_do_produto }}
+                                        </td>
+                                        <td class="tituloAplicacao">
+                                            <strong>Cod. Interno:</strong> {{ $produto->codigo_interno }}
+                                        </td>
+                                    </tr>
+                                    <tr >
+                                        <td class="tituloAplicacao">
+                                            <strong>Produto:</strong> {{ $produto->grupo }}
+                                        </td>
+                                        <td class="tituloAplicacao">
+                                            <strong>Cod. Fabricante:</strong> {{ $produto->codigo_externo }}
+                                        </td>
+                                    </tr>
+                                    <tr class="linha-aplicacao linha-aplicacao-resultado">
+                                        <td class="tituloAplicacao">
+                                            <strong>Linha do produto:</strong> {{ $produto->sub_grupo }}
+                                        </td>
+                                        <td class="tituloAplicacao">
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </div>
-
                             <div class="btDetalhes">
-                                <button style="margin-left: 5px" id="botao_comprar">Comprar</button>
+                                <button style="margin-left: 5px" onclick="pageComprar()">Comprar</button>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
             <div class="container-aplicacao" style="">
                 <div class="cabecalhoCaixaAplicacao" style="background: #8B0000">
@@ -105,6 +127,10 @@
 
     @slot('scripts')
         <script>
+            function pageComprar() {
+                window.location.href = "{{ route('index.lojas') }}"
+            }
+
             var img = document.getElementById("imagemPequena");
             var imgGrande = document.getElementById("image_grande_produto");
             var imgDivGrande = document.getElementById("image-produto-grande");
