@@ -30,7 +30,7 @@
             </ul>
             <div class="prodEncontradosOrd ">
                 <div id="cw-container-total-resultado-plural" class="prodEncontrados vermelho-padrao-fonte" style="">
-                    <em><strong id="" >{{ $produtos_all }}</strong> produtos encontrados 123</em>
+                    <em><strong id="" >{{ $produtos_all }}</strong> produtos encontrados</em>
                 </div>
                 <div id="cw-lista-vazia" class="prodEncontrados" _cw-server-rendered="1" style="display: none;">
                     Nenhum item encontrado.
