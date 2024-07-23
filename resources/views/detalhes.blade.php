@@ -51,10 +51,10 @@
                 <div class="informacoesProdutoHome informacoesProdutoHome-resultado">
                     <h2 class="tituloProduto" id="cw-descricao-produto" style="font-size: 18px">{{ $produto->nome }}</h2>
                     <div class="infosTecnicasHome">
-                        <div>
-                            <figure class="imagemHomeProduto">
-                                <img id="cw-arquivo-foto-produto" onerror=""
-                                     src="{{ asset($produto->image_url) }}" alt="{{ $produto->nome }}">
+                        <div id="imagemPequena">
+                            <figure class="imagemHomeProduto imagemHomeProduto-detalhes">
+                                <img  src="{{ asset($produto->image_url) }}"
+                                      alt="{{ $produto->nome }}">
                             </figure>
                         </div>
                         <div class="tabelaHome tabelaHome-resultado"
