@@ -2,14 +2,16 @@
     @slot('stylesheet')
         <style>
             .pagina-ideia .page-link {
-                padding: 5px .75rem;
+                padding: 5px .75rem!important;
             }
             .pagina-ideia .pagination li a {
-                font-size: 15px;
+                font-size: 15px!important;
+                line-height: 20px!important;
+
             }
             .pagina-ideia .page-item.active .page-link {
-                background-color: #8B0000;
-                border-color: #8B0000;
+                background-color: #8B0000!important;
+                border-color: #8B0000!important;
             }
             .pagina-ideia .tituloAplicacao > * {
                 padding-right: 0px!important;
@@ -107,20 +109,9 @@
                         </div>
                     </a>
                 @endforeach
-                <div class="pr-4 pl-4">
+                <div class="pr-4 pl-4 d-flex justify-content-center">
                     @if ($produtos->hasPages())
                         <div class="d-flex justify-content-between">
-                            <div id="mostrarPaginas">
-                                <p class="text-sm text-gray leading-5">
-                                    Mostrando
-                                    <span class="font-medium">{{ $produtos->firstItem() }}</span>
-                                    até
-                                    <span class="font-medium">{{ $produtos->lastItem() }}</span>
-                                    de
-                                    <span class="font-medium">{{ $produtos->total() }}</span>
-                                    resultados
-                                </p>
-                            </div>
                             {{ $produtos->links() }}
                         </div>
                     @endif

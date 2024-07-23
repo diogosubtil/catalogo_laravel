@@ -55,6 +55,7 @@ class ProdutosController extends Controller
             $file->move(public_path('uploads/'), $file->getClientOriginalName());
         }
 
+        dd($data);
         Produto::create($data);
 
         //ENVIA A TRASAÇÃO (COMMIT)
@@ -134,23 +135,56 @@ class ProdutosController extends Controller
         if ($file->isValid()) {
             $path = $file->getRealPath();
             $data = array_map('str_getcsv', file($path));
-            $data_csv = [];
+
             foreach ($data as $key => $row) {
                 if ($key == 0 ){continue;}
-                $data_csv[] = [
-                    'nome' => $row[0],
-                    'descricao' => $row[1],
-                    'codigo_interno' => $row[2],
-                    'codigo_externo' => $row[3],
-                    'marca' => $row[4],
-                    'veiculo' => $row[5],
-                    'linha_do_produto' => $row[6],
-                    'visivel' => $row[7],
-                    'image_url' => $row[8]
+                $marca_row = !empty($row[11]) ? $row[11] : 'Outros';
+                $grupo_row = !empty($row[12]) ? $row[12] : 'Outros';
+                $sub_grupo_row = !empty($row[13]) ? $row[13] : 'Outros';
+                $data_csv = [
+                    'codigo_interno' => $row[0],
+                    'codigo_externo' => $row[1],
+                    'marca_do_produto' => $row[2],
+                    'nome' => $row[3],
+                    'descricao' => $row[4],
+                    'marca' => $marca_row,
+                    'grupo' => $grupo_row,
+                    'sub_grupo' => $sub_grupo_row,
+                    'visivel' => 'sim',
+                    'image_url' => !empty($row[15]) ? $row[15] : null,
                 ];
+
+                $marca = [
+                    'nome' => $marca_row,
+                ];
+
+                $grupo = [
+                    'nome' => $grupo_row,
+                ];
+
+                $sub_grupo = [
+                    'nome' => $sub_grupo_row,
+                    'grupo' =>  $grupo_row,
+                ];
+
+                if (Produto::where('codigo_interno', $row[0])->exists()) {
+                    Produto::query()->where('codigo_interno', $row[0])->update($data_csv);
+                } else {
+                    Produto::create($data_csv);
+                }
+
+                if (!Marca::query()->where('nome', $marca['nome'])->exists()) {
+                    Marca::create($marca);
+                }
+                if (!Grupo::where('nome', $grupo['nome'])->exists()) {
+                    Grupo::create($grupo);
+                }
+                if (!SubGrupo::where('nome', $sub_grupo['nome'])->exists()) {
+                    SubGrupo::create($sub_grupo);
+                }
             }
 
-            Produto::create($data_csv);
+
 
             return redirect()->back()->with('success', 'CSV importado com sucesso!');
         } else {

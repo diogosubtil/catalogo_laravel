@@ -16,11 +16,11 @@ class Produto extends Model
         'descricao',
         'codigo_interno',
         'codigo_externo',
-        'marca_do_produto',
         'marca',
         'grupo',
         'sub_grupo',
         'visivel',
         'image_url',
+        'marca_do_produto',
     ];
 }
