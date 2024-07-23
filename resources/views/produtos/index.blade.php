@@ -54,7 +54,7 @@
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Arquivo CSV</h5>
                         </div>
-                        <form method="POST" enctype="multipart/form-data" action="{{ route('csv') }}">
+                        <form method="POST" id="form_csv" enctype="multipart/form-data" action="{{ route('csv') }}">
                             @csrf
                             <div class="modal-body">
                                 <div class="card-body">
@@ -69,8 +69,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" onclick="$('#modal_csv').modal('hide');" class="btn btn-danger">Cancelar</button>
-                                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                                <button type="button" id="cancelar_csv" onclick="$('#modal_csv').modal('hide');" class="btn btn-danger">Cancelar</button>
+                                <button type="submit" id="cadastrar_csv" class="btn btn-primary">Cadastrar</button>
                             </div>
                         </form>
                     </div>
@@ -218,6 +218,13 @@
     @endslot
 
     @slot('scripts')
-
+        <script>
+            let form_csv = document.querySelector('#form_csv');
+            form_csv.addEventListener('submit', function() {
+                $('#cancelar_csv').attr('disabled', 'disabled')
+                $('#cadastrar_csv').attr('disabled', 'disabled')
+                $('#cadastrar_csv').text('carregando...')
+            });
+        </script>
     @endslot
 </x-app>
