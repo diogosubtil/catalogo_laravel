@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Grupo;
 use App\Models\Marca;
 use App\Models\Produto;
+use App\Models\SubGrupo;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -51,5 +53,19 @@ class IndexController extends Controller
     public function lojas()
     {
         return view('lojas');
+    }
+
+    public function getsubgrupos($nome)
+    {
+        $sub_grupos = SubGrupo::query()->where('grupo', '=', $nome)->get();
+
+
+        $data = '<option disabled value="" selected>Selecione a linha do produto</option>';
+        foreach ($sub_grupos as $sub_grupo) {
+            $data .=   '<option value="' . $sub_grupo->nome . '">' . $sub_grupo->nome . '</option>'
+;
+        }
+
+        return $data;
     }
 }

@@ -15,6 +15,7 @@ Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::post('/', [IndexController::class, 'index'])->name('index.pesquisa');
 Route::get('/produto/{produto}', [IndexController::class, 'detalhes'])->name('index.detalhes');
 Route::get('/lojas', [IndexController::class, 'lojas'])->name('index.lojas');
+Route::get('/subgrupos/{id}', [IndexController::class, 'getsubgrupos'])->name('index.subgrupos');
 
 Route::middleware('auth')->group(function () {
 

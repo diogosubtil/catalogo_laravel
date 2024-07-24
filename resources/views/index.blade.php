@@ -59,7 +59,7 @@
                             <div>
                                 <figure class="imagemHomeProduto">
                                     <img id="cw-arquivo-foto-produto" onerror=""
-                                         src="{{ File::exists(public_path($produto->image_url)) ? asset($produto->image_url) : asset('/assets/images/default.jpg') }}"
+                                         src="{{ !empty($produto->image_url) && File::exists(public_path($produto->image_url)) ? asset($produto->image_url) : asset('/assets/images/default.jpg') }}"
                                          alt="{{ $produto->nome }}">
                                 </figure>
                             </div>

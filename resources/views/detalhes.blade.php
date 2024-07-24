@@ -53,8 +53,9 @@
                     <div class="infosTecnicasHome">
                         <div id="imagemPequena">
                             <figure class="imagemHomeProduto imagemHomeProduto-detalhes">
-                                <img  src="{{ File::exists(public_path($produto->image_url)) ? asset($produto->image_url) : asset('/assets/images/default.jpg') }}"
-                                      alt="{{ $produto->nome }}">
+                                <img
+                                    src="{{ !empty($produto->image_url) && File::exists(public_path($produto->image_url)) ? asset($produto->image_url) : asset('/assets/images/default.jpg') }}"
+                                    alt="{{ $produto->nome }}">
                             </figure>
                         </div>
                         <div class="tabelaHome tabelaHome-resultado"

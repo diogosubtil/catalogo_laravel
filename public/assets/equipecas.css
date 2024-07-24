@@ -2801,23 +2801,14 @@
     background: #ebebeb;
     position: relative;
     height: 635px;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-radius: 30px;
     margin-top: 23px;
     margin-bottom: 610px;
     padding-right: 15px;
     padding-left: 15px
 }
 
-.pagina-ideia .container-filtros .content-filtros:before {
-    content: "";
-    width: 1000px;
-    height: 100%;
-    top: 0;
-    left: -1000px;
-    position: absolute;
-    background: #ebebeb
-}
+
 
 .pagina-ideia .container-filtros .content-filtros .buscaAvancada {
     display: none

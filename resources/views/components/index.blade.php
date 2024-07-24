@@ -64,7 +64,7 @@
                                     </select>
                                 </div>
                                 <div class="input-groupTata">
-                                    <select type="text" class="campoGeral" id="grupo" name="grupo">
+                                    <select onchange="grupoSelect($(this).val())" type="text" class="campoGeral" id="grupo" name="grupo">
                                         <option disabled value="" selected>Selecione o produto</option>
                                         @php
                                             $data['grupo'] = Grupo::all();
@@ -90,7 +90,7 @@
                             </div>
                             <div class="">
                                 <button class="limpar" type="button" id="limpar-busca" onclick="limparBusca()">Limpar
-                                    campos
+                                    pesquisa
                                 </button>
                                 <button class="buscar" type="submit">Buscar</button>
                             </div>
@@ -157,6 +157,23 @@
 <script>
     function limparBusca() {
         window.location.href = '/'
+    }
+
+    function grupoSelect(value) {
+        $.ajax({
+            url: '{{ route('index.subgrupos', 'id') }}'.replace('id', value),
+            type: 'GET',
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(data) {
+                $('#sub_grupo').html(data)
+            },
+            error: function(data) {
+                console.log(data);
+            }
+        });
     }
 </script>
 </body>
