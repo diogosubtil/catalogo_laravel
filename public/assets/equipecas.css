@@ -3020,8 +3020,7 @@
 
     .pagina-ideia .container-filtros .content-filtros {
         padding-bottom: 20px!important;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
+        border-radius: 0;
         margin-bottom: 0;
         height: initial
     }
