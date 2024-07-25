@@ -14,7 +14,7 @@ class DashboardController extends Controller
     //FUNÇÃO PARA EXIBIR A VIEW DASHBOARD
     public function index()
     {
-        $data['produtos'] = Produto::query()->limit(20)->get();
+        $data['produtos'] = Produto::query()->limit(20)->orderBy('id', 'desc')->get();
         return view('dashboard')->with($data);
     }
 }
