@@ -184,8 +184,6 @@ class ProdutosController extends Controller
                 }
             }
 
-
-
             return redirect()->back()->with('success', 'CSV importado com sucesso!');
         } else {
             return redirect()->back()->with('error', 'Erro ao importar CSV.');

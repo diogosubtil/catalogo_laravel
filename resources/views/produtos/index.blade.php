@@ -221,6 +221,15 @@
         <script>
             let form_csv = document.querySelector('#form_csv');
             form_csv.addEventListener('submit', function() {
+                Swal.fire({
+                    title: 'Cadastrando produtos aguarde!',
+                    html: 'Não feche a pagina até terminar o processo.',
+                    timerProgressBar: true,
+                    allowOutsideClick: false,
+                    didOpen: () => {
+                        Swal.showLoading()
+                    }
+                })
                 $('#cancelar_csv').attr('disabled', 'disabled')
                 $('#cadastrar_csv').attr('disabled', 'disabled')
                 $('#cadastrar_csv').text('carregando...')
