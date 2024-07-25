@@ -84,7 +84,7 @@
                                                                 <label for="password_confirmation" class="form-label fs-6 fw-bold mb-3 required">Comfirme a senha</label>
                                                                 <input type="password" class="form-control"
                                                                        id="password_confirmation" name="password_confirmation"
-                                                                       placeholder="Valor" value="">
+                                                                       placeholder="Senha" value="">
                                                             </div>
                                                             @if ($errors->get('password_confirmation'))
                                                                 @foreach ((array) $errors->get('password_confirmation') as $message)
