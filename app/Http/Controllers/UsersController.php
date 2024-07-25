@@ -39,6 +39,12 @@ class UsersController extends Controller
     //FUNÇÃO PARA CADASTRAR
     public function store(Request $request)
     {
+        $request->validate([
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            'name' => ['required', 'string', 'max:255'],
+        ]);
+
         //INICIA A TRANSAÇÃO
         DB::beginTransaction();
 
