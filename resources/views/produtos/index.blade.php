@@ -62,7 +62,7 @@
                                         <div class="col-md-12 mb-5">
                                             <div class="form-group">
                                                 <label for="csv_file">CSV</label>
-                                                <input type="file" class="col-12" name="csv_file" id="csv_file" required>
+                                                <input type="file" class="col-12" name="csv_file" id="csv_file" accept=".csv" required>
                                             </div>
                                         </div>
                                     </div>

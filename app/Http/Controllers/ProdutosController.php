@@ -124,7 +124,7 @@ class ProdutosController extends Controller
     {
         // Validação do arquivo
         $validator = Validator::make($request->all(), [
-            'csv_file' => 'required|file|mimes:csv,txt',
+            'csv_file' => 'required|file|mimes:csv',
         ]);
 
         if ($validator->fails()) {
