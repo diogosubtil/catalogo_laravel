@@ -22,5 +22,11 @@ class Produto extends Model
         'visivel',
         'image_url',
         'marca_do_produto',
+        'codigo_de_pesquisa_1',
+        'codigo_de_pesquisa_2',
+        'codigo_de_pesquisa_3',
+        'codigo_de_pesquisa_4',
+        'codigo_de_pesquisa_5',
+        'codigo_de_pesquisa_6',
     ];
 }

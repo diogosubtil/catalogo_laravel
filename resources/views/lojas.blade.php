@@ -124,7 +124,8 @@
                                     <span>Ao lado da Caiado Pneus</span><br>
                                 </p>
                                 <p>
-                                    <span style="font-weight:bold;">(66)3515-0097</span>
+                                    <span style="font-weight:bold;"><a href="http://wa.me/556635150097" target="_blank">(66)3515-0097</a></span>
+                                    <a href="http://wa.me/556635150097" target="_blank"><img src="{{ asset('/assets/images/whats.webp') }}"></a>
                                 </p>
                                 <p>
                                     <span>Segunda à Sexta 07:30 às 17:30</span><br>
@@ -154,7 +155,8 @@
                                     <span>Em frente ao Posto Contorno</span><br>
                                 </p>
                                 <p>
-                                    <span style="font-weight:bold;">(42)3122-3600</span>
+                                    <span style="font-weight:bold;"><a href="http://wa.me/554231223600" target="_blank">(42)3122-3600</a></span>
+                                    <a href="http://wa.me/554231223600" target="_blank"><img src="{{ asset('/assets/images/whats.webp') }}"></a>
                                 </p>
                                 <p>
                                     <span>Segunda à Sexta 08:00 às 18:00</span><br>

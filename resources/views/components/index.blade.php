@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Equipeças - Catálogo de produtos</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('/assets/images/icone.png') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     {{ $stylesheet }}
     <style>
         .title_contatos {
@@ -16,6 +17,10 @@
             .title_contatos {
                 font-size: 25px;
             }
+        }
+
+        body {
+            font-family: 'Bahnschrift'!important;
         }
     </style>
 </head>
@@ -43,17 +48,17 @@
                 <div class="content-filtros comp-jddb0kzl" id="tab-0" style="display: none;">
                     @if (Request::segment(1) != 'produto' && Request::segment(1) != 'lojas')
                         <form id="form-busca" action="{{ route('index.pesquisa') }}" type="POST">
-                            <h1 class="tituloFiltros">Catálogo de Produtos</h1>
+                            <h1 class="tituloFiltros" style="color: #9e9e9e!important;">Catálogo de Produtos</h1>
                             <div class="camposDeBusca">
                                 <div class="input-groupTata">
                                     <input type="text" class="campoGeral"
                                            value="{{ !empty($_GET['geral']) ? $_GET['geral'] : null }}"
-                                           placeholder="Nome / Codigo / Descrição"
+                                           placeholder="Nome / Código / Descrição"
                                            id="geral" name="geral">
                                 </div>
                                 <div class="input-groupTata">
                                     <select type="text" class="campoGeral" id="marca" name="marca">
-                                        <option disabled value="" selected>Selecione a Montadora</option>
+                                        <option disabled value="" selected>Selecione a montadora</option>
                                         @php
                                             $data['marcas'] = Marca::all();
                                         @endphp
@@ -65,7 +70,7 @@
                                 </div>
                                 <div class="input-groupTata">
                                     <select onchange="grupoSelect($(this).val())" type="text" class="campoGeral" id="grupo" name="grupo">
-                                        <option disabled value="" selected>Selecione o produto</option>
+                                        <option disabled value="" selected>Selecione o categoria</option>
                                         @php
                                             $data['grupo'] = Grupo::all();
                                         @endphp
@@ -77,7 +82,7 @@
                                 </div>
                                 <div class="input-groupTata">
                                     <select type="text" class="campoGeral" id="sub_grupo" name="sub_grupo">
-                                        <option disabled value="" selected>Selecione a linha do produto</option>
+                                        <option disabled value="" selected>Selecione o produto</option>
                                         @php
                                             $data['sub_grupo'] = SubGrupo::all();
                                         @endphp
@@ -138,14 +143,14 @@
                                      src="https://static.wixstatic.com/media/af037f3cc11741d1ada5c7f70d1074bf.png/v1/fill/w_30,h_30,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/af037f3cc11741d1ada5c7f70d1074bf.png"
                                      style="width: 30px; height: 30px; object-fit: cover;">
                             </a>
-                            © Equipeças <span id="ideia-ano-footer"></span> - Todos os direitos reservados.
+                            © Equipeças <span id="ideia-ano-footer"></span> - produzido orgulhosamente por nós mesmos.
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div style="float: right; margin-top: 25px;font-size: 14px!important;">
-                            Desenvolvido por <a href="https://wa.me/5541998657434" target="_blank" style="color: inherit;text-decoration: none;background: none;border: none;padding: 0;margin: 0;font: inherit;text-align: inherit;">AF Robotics</a>
-                        </div>
-                    </div>
+{{--                    <div class="col-6">--}}
+{{--                        <div style="float: right; margin-top: 25px;font-size: 14px!important;">--}}
+{{--                            Desenvolvido por <a href="https://wa.me/5541998657434" target="_blank" style="color: inherit;text-decoration: none;background: none;border: none;padding: 0;margin: 0;font: inherit;text-align: inherit;">AF Robotics</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </section>

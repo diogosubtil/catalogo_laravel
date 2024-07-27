@@ -45,7 +45,7 @@
             <div class="caixaProdutoHome">
                 <div class="cabecalhoCaixaProduto" style="background: #8B0000">
                     <div class="content-numeros">
-                        <div style="color: #FFFFFF">{{ $produto->codigo_interno }} / {{ $produto->codigo_externo }}</div>
+                        <div style="color: #FFFFFF">{{ $produto->marca_do_produto }} / {{ $produto->codigo_externo }}</div>
                     </div>
                 </div>
                 <div class="informacoesProdutoHome informacoesProdutoHome-resultado">
@@ -66,12 +66,12 @@
                                     <tr>
                                         <th class="titTabAplic" scope="col">
                                             <div>
-                                                ITEM
+                                                PRODUTO
                                             </div>
                                         </th>
                                         <th class="titTabAplic" scope="col">
                                             <div id="cw-coluna-complementoaplicacao2" style="">
-                                                Código
+                                                CÓDIGOS
                                             </div>
                                         </th>
                                     </tr>
@@ -79,7 +79,7 @@
                                     <tbody>
                                     <tr>
                                         <td class="tituloAplicacao" >
-                                            <strong>Marca:</strong> {{ $produto->marca_do_produto }}
+                                            <strong></strong> {{ $produto->marca }}
                                         </td>
                                         <td class="tituloAplicacao">
                                             <strong>Cod. Interno:</strong> {{ $produto->codigo_interno }}
@@ -87,7 +87,7 @@
                                     </tr>
                                     <tr >
                                         <td class="tituloAplicacao">
-                                            <strong>Produto:</strong> {{ $produto->grupo }}
+                                            <strong></strong> {{ $produto->grupo }}
                                         </td>
                                         <td class="tituloAplicacao">
                                             <strong>Cod. Fabricante:</strong> {{ $produto->codigo_externo }}
@@ -95,7 +95,7 @@
                                     </tr>
                                     <tr class="linha-aplicacao linha-aplicacao-resultado">
                                         <td class="tituloAplicacao">
-                                            <strong>Linha do produto:</strong> {{ $produto->sub_grupo }}
+                                            <strong></strong> {{ $produto->sub_grupo }}
                                         </td>
                                         <td class="tituloAplicacao">
                                         </td>

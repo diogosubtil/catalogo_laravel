@@ -152,6 +152,12 @@ class ProdutosController extends Controller
                     'sub_grupo' => $sub_grupo_row,
                     'visivel' => 'sim',
                     'image_url' => !empty($row[15]) ? $row[15] : null,
+                    'codigo_de_pesquisa_1' => !empty($row[5]) ? $row[5] : null,
+                    'codigo_de_pesquisa_2' => !empty($row[6]) ? $row[6] : null,
+                    'codigo_de_pesquisa_3' => !empty($row[7]) ? $row[7] : null,
+                    'codigo_de_pesquisa_4' => !empty($row[8]) ? $row[8] : null,
+                    'codigo_de_pesquisa_5' => !empty($row[9]) ? $row[9] : null,
+                    'codigo_de_pesquisa_6' => !empty($row[10]) ? $row[10] : null,
                 ];
 
                 $marca = [
