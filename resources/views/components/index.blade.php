@@ -126,8 +126,8 @@
         <section class="assinatura" style="background: #8B0000">
             <div class="container">
                 <div class="row">
-                    <div class="col-6">
-                        <div class="textoAssinatura" style="font-size: 14px!important;">
+                    <div class="col-12" style="text-align: center">
+                        <div class="textoAssinatura" style="font-size: 14px!important;float: left">
                             <a href="https://www.facebook.com/equipecas/" target="_blank">
                                 <img alt="Grey Facebook Ícone" fetchpriority="high"
                                      src="https://static.wixstatic.com/media/d3470ec8ca26475da4b228f0199b5d3d.png/v1/fill/w_30,h_30,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/d3470ec8ca26475da4b228f0199b5d3d.png"
@@ -143,6 +143,8 @@
                                      src="https://static.wixstatic.com/media/af037f3cc11741d1ada5c7f70d1074bf.png/v1/fill/w_30,h_30,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/af037f3cc11741d1ada5c7f70d1074bf.png"
                                      style="width: 30px; height: 30px; object-fit: cover;">
                             </a>
+                        </div>
+                        <div class="textoAssinatura" style="font-size: 14px!important;margin-top: 30px">
                             © Equipeças <span id="ideia-ano-footer"></span> - produzido orgulhosamente por nós mesmos.
                         </div>
                     </div>
