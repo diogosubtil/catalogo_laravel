@@ -81,8 +81,9 @@
                 <a class="caixaProdutoHome">
                     <div class="cabecalhoCaixaProduto" style="background: #8B0000">
                         <div class="content-numeros">
-                            <div id="cw-numero-produto" style="color: #FFFFFF">{{ $produto->marca_do_produto }}
-                                / {{ $produto->codigo_externo }}</div>
+                            <div id="cw-numero-produto" style="color: #FFFFFF">
+                                {{ $produto->codigo_externo }} {{ $produto->marca_do_produto }}
+                            </div>
                         </div>
                         <div class="containerFlags containerFlags-resultado" style="color: #8B0000!important;">
                             {{ $produto->codigo_interno }}
