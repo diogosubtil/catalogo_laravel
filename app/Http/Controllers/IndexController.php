@@ -29,7 +29,7 @@ class IndexController extends Controller
 
         if ($request->has('geral')) {
             $geral = $request->geral;
-            $data['produtos']->where(function($query) use ($geral) {
+            $data['produtos']->where(function ($query) use ($geral) {
                 $query->where('nome', 'like', "%$geral%")
                     ->orWhere('codigo_interno', 'like', "%$geral%")
                     ->orWhere('codigo_externo', 'like', "%$geral%")
@@ -42,7 +42,7 @@ class IndexController extends Controller
 
         return view('index')
             ->with('produtos', $data['produtos']->paginate(20)->appends($request->all()))
-            ->with('produtos_all',$data['produtos_all']);
+            ->with('produtos_all', $data['produtos_all']);
     }
 
     public function detalhes(Produto $produto)
@@ -57,13 +57,12 @@ class IndexController extends Controller
 
     public function getsubgrupos($nome)
     {
-        $sub_grupos = SubGrupo::query()->where('grupo', '=', $nome)->get();
+        $sub_grupos = SubGrupo::query()->where('grupo', '=', $nome)->orderBy('nome', 'asc')->get();
 
 
-        $data = '<option disabled value="" selected>Selecione a linha do produto</option>';
+        $data = '<option disabled value="" selected>Selecione o produto</option>';
         foreach ($sub_grupos as $sub_grupo) {
-            $data .=   '<option value="' . $sub_grupo->nome . '">' . $sub_grupo->nome . '</option>'
-;
+            $data .= '<option value="' . $sub_grupo->nome . '">' . $sub_grupo->nome . '</option>';
         }
 
         return $data;
