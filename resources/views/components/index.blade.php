@@ -60,7 +60,7 @@
                                     <select type="text" class="campoGeral" id="marca" name="marca">
                                         <option disabled value="" selected>Selecione a montadora</option>
                                         @php
-                                            $data['marcas'] = Marca::all();
+                                            $data['marcas'] = Marca::query()->orderBy('nome', 'asc')->get();
                                         @endphp
                                         @foreach($data['marcas'] as $marcas)
                                             <option
@@ -72,7 +72,7 @@
                                     <select onchange="grupoSelect($(this).val())" type="text" class="campoGeral" id="grupo" name="grupo">
                                         <option disabled value="" selected>Selecione o categoria</option>
                                         @php
-                                            $data['grupo'] = Grupo::all();
+                                            $data['grupo'] = Grupo::query()->orderBy('nome', 'asc')->get();
                                         @endphp
                                         @foreach($data['grupo'] as $grupo)
                                             <option
@@ -84,7 +84,7 @@
                                     <select type="text" class="campoGeral" id="sub_grupo" name="sub_grupo">
                                         <option disabled value="" selected>Selecione o produto</option>
                                         @php
-                                            $data['sub_grupo'] = SubGrupo::all();
+                                            $data['sub_grupo'] = SubGrupo::query()->orderBy('nome', 'asc')->get();
                                         @endphp
                                         @foreach($data['sub_grupo'] as $sub_grupo)
                                             <option
