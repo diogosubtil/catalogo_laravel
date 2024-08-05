@@ -41,7 +41,7 @@ class IndexController extends Controller
         $data['produtos_all'] = $data['produtos']->count();
 
         return view('index')
-            ->with('produtos', $data['produtos']->paginate(4)->appends($request->all()))
+            ->with('produtos', $data['produtos']->paginate(20)->appends($request->all()))
             ->with('produtos_all',$data['produtos_all']);
     }
 
