@@ -24,6 +24,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/csv', [ProdutosController::class, 'importCsv'])->name('csv');
 
     Route::resource('/produtos', ProdutosController::class);
+    Route::post('/produtos/deleteall', [ProdutosController::class, 'deletarTodos'])->name('produtos.deleteall');
+
     Route::resource('/users', UsersController::class);
     Route::resource('/marcas', MarcasController::class);
     Route::resource('/grupos', GruposController::class);

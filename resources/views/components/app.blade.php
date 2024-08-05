@@ -621,7 +621,7 @@
     <script src="{{ asset('/assets/js/custom/utilities/modals/create-app.js') }}"></script>
     <script src="{{ asset('/assets/js/custom/utilities/modals/users-search.js') }}"></script>
     <script>
-        //FUNÇÃO PARA DESATIVAR
+        //FUNÇÃO PARA DELETAR
         let formDelete = document.querySelectorAll('#form-delete')
         if (formDelete) {
             formDelete.forEach(function(value) {
@@ -636,6 +636,32 @@
                     e.preventDefault()
                     Swal.fire({
                         text: "Tem certeza que deseja excluir?",
+                        icon: "question",
+                        showCancelButton: !0,
+                        buttonsStyling: !1,
+                        confirmButtonText: "Sim, excluir!",
+                        cancelButtonText: "Não, cancelar",
+                        customClass: {
+                            cancelButton: "btn fw-bold btn-primary",
+                            confirmButton: "btn fw-bold btn-danger"
+                        }
+                    }).then((function(t) {
+                        if (t.value) {
+                            value.submit()
+                        }
+                    }))
+                })
+            })
+        }
+
+        //FUNÇÃO PARA DELETA TODOS
+        let formDeleteAll = document.querySelectorAll('#form-delete-all')
+        if (formDeleteAll) {
+            formDeleteAll.forEach(function(value) {
+                value.addEventListener('submit', function(e) {
+                    e.preventDefault()
+                    Swal.fire({
+                        text: "Tem certeza que deseja excluir tudo?",
                         icon: "question",
                         showCancelButton: !0,
                         buttonsStyling: !1,

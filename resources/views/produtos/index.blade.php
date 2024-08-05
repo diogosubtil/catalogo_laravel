@@ -47,6 +47,10 @@
             </div>
             <div class="col-xl-4 col-md-6 col-12">
                 <button onclick="$('#modal_csv').modal('show');" class="btn btn-primary mb-2 col-12">Importar CSV</button>
+                <form id="form-delete-all" action="{{ route('produtos.deleteall') }}" method="post" class="menu-link">
+                    @csrf
+                    <button type="submit" class="btn btn-danger mb-2 col-12">Deletar produtos</button>
+                </form>
             </div>
             <div class="modal fade" id="modal_csv" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-md" role="document">

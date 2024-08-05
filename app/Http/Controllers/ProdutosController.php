@@ -195,4 +195,14 @@ class ProdutosController extends Controller
             return redirect()->back()->with('error', 'Erro ao importar CSV.');
         }
     }
+
+    public function deletarTodos()
+    {
+        Produto::query()->delete();
+
+        //ENVIA MENSAGEM DE SUCESSO
+        session()->flash('success', 'success');
+
+        return to_route('produtos.index');
+    }
 }
