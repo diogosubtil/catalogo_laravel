@@ -625,6 +625,13 @@
         let formDelete = document.querySelectorAll('#form-delete')
         if (formDelete) {
             formDelete.forEach(function(value) {
+                value.parentElement.addEventListener('click', function() {
+                    var submitButton = value.querySelector('button[type="submit"]');
+                    if (submitButton) {
+                        submitButton.click();
+                    }
+                });
+
                 value.addEventListener('submit', function(e) {
                     e.preventDefault()
                     Swal.fire({
