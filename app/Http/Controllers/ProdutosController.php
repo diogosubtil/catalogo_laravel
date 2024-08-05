@@ -199,6 +199,9 @@ class ProdutosController extends Controller
     public function deletarTodos()
     {
         Produto::query()->delete();
+        Marca::query()->delete();
+        Grupo::query()->delete();
+        SubGrupo::query()->delete();
 
         //ENVIA MENSAGEM DE SUCESSO
         session()->flash('success', 'success');
