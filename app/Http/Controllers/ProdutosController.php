@@ -122,15 +122,6 @@ class ProdutosController extends Controller
 
     public function importCsv(Request $request)
     {
-        // Validação do arquivo
-        $validator = Validator::make($request->all(), [
-            'csv_file' => 'required|file|mimes:csv',
-        ]);
-
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator);
-        }
-
         $file = $request->file('csv_file');
         if ($file->isValid()) {
             $path = $file->getRealPath();

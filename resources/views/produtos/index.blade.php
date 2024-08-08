@@ -12,12 +12,6 @@
                     </div>
                 </div>
             </div>
-            @if (session('success'))
-                <p>{{ session('success') }}</p>
-            @endif
-            @if (session('error'))
-                <p>{{ session('error') }}</p>
-            @endif
             <div class="col-xl-4 col-md-6 col-12">
                 <div class="card">
                     <div class="card h-100 ">

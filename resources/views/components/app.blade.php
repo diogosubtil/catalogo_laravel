@@ -737,7 +737,7 @@
         @if (session()->has('error'))
             Swal.fire({
                 title: 'Erro!',
-                text: "Falha ao processar os dados!",
+                text: "{{ session('error') ? session('error') : 'Falha ao processar os dados!' }}",
                 icon: 'error',
                 showCancelButton: 0,
                 buttonsStyling: !1,
